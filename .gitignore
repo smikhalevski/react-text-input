@@ -1,0 +1,34 @@
+# Paths
+node/
+node_modules/
+target/
+typings/
+npm-debug.log
+
+# IDE
+.idea/
+*.iml
+*.bak
+*.tmp
+*.log
+*.swp
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+$RECYCLE.BIN/
+.Trashes
+*.lnk
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Remote AFP
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk

@@ -1,0 +1,77 @@
+@import "../main/input";
+@import "../main/text-area";
+
+@example-grid-padding: 30px;
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #f8f8f8;
+  margin: 0;
+  padding: 0;
+
+}
+
+#demo {
+  padding: 50px 0;
+}
+
+.fa--left {
+  margin-right: 3px;
+}
+
+kbd {
+  background-color: #d3d7cf;
+  color: #000;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+h1 {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+.form-group--disabled {
+  color: #888;
+
+  code {
+    color: #c7798d;
+  }
+  .prop-name {
+    background-color: #888a85;
+    color: #fff;
+  }
+}
+
+.form-control,
+.input-group {
+  max-width: 200px;
+}
+
+.input-group + .input-group {
+  margin-top: 10px;
+}
+
+.prop {
+  &__name {
+    background-color: #2e3436;
+    color: #fff;
+  }
+  &__type {
+    background-color: #e7e7e7;
+    color: #000;
+  }
+}
+
+* {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.light {
+  font-weight: 200;
+}
