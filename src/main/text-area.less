@@ -1,12 +1,14 @@
+@import '~react-scroll-box/src/main/scroll-box';
 @import './input';
 
 .@{text-input-class}--text-area {
   height: auto;
 
-  > textarea,
-  > .@{text-input-class}__content {
+  .@{text-input-class}__control,
+  .@{text-input-class}__content {
     white-space: pre-wrap;
     overflow-wrap: break-word;
     word-wrap: break-word;
+    overflow: hidden;
   }
 }

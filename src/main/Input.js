@@ -2,16 +2,16 @@ import React from 'react';
 import {findDOMNode} from 'react-dom';
 import {GenericInput} from './GenericInput';
 
-const {string, bool, any} = React.PropTypes;
+const {any, bool} = React.PropTypes;
 
 export class Input extends React.Component {
 
   static propTypes = {
-    value: string,
-    defaultValue: string,
+    value: any,
+    defaultValue: any,
     disabled: bool,
-    className: string,
     placeholder: any,
+    className: any,
     fitLineLength: bool
   };
   static defaultProps = {
@@ -21,7 +21,7 @@ export class Input extends React.Component {
 
   state = {
     focused: false,
-    content: this.props.value || this.props.defaultValue
+    value: this.props.defaultValue
   };
 
   onFocus = e => this.setState({focused: true});
@@ -30,8 +30,7 @@ export class Input extends React.Component {
 
   onChange = e => {
     if ('defaultValue' in this.props) {
-      // Update content of uncontrolled component manually.
-      this.setState({content: e.target.value});
+      this.setState({value: e.target.value});
     }
   };
 
@@ -40,29 +39,39 @@ export class Input extends React.Component {
   }
 
   render() {
-    const {value, defaultValue, className, style, disabled, placeholder, fitLineLength, ...otherProps} = this.props;
+    const {value, defaultValue, className, style, fitLineLength, ...rest} = this.props;
     let classNames = [];
     if (className) {
       classNames = classNames.concat(className);
     }
     if (this.state.focused) {
-      classNames.push('text-input--focused');
+      classNames.push('text-input--focus');
     }
     if (fitLineLength) {
       classNames.push('text-input--fit-line-length');
     }
+    let textValue = value;
+    if (value == null) {
+      textValue = this.state.value;
+    }
+    let listeners = {};
+    for (let key in rest) {
+      if (/^on[A-Z]/.test(key)) {
+        listeners[key] = rest[key];
+        delete rest[key];
+      }
+    }
     return (
-      <GenericInput style={style}
-                    disabled={disabled}
-                    placeholder={placeholder}
+      <GenericInput {...listeners}
+                    {...rest}
+                    style={style}
                     className={classNames}
-                    value={this.state.content}>
-        <input {...otherProps}
+                    value={textValue}>
+        <input {...rest}
                ref="input"
                className="text-input__area text-input__control"
                value={value}
                defaultValue={defaultValue}
-               disabled={disabled}
                onChange={this.onChange}
                onFocus={this.onFocus}
                onBlur={this.onBlur}/>

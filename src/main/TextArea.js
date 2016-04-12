@@ -20,47 +20,65 @@ export class TextArea extends React.Component {
     fitLineLength: false
   };
 
-  state = {focused: false};
+  state = {
+    focused: false,
+    value: this.props.defaultValue
+  };
 
   onFocus = e => this.setState({focused: true});
 
   onBlur = e => this.setState({focused: false});
+
+  onChange = e => {
+    if ('defaultValue' in this.props) {
+      this.setState({value: e.target.value});
+    }
+  };
 
   componentDidMount () {
     findDOMNode(this).addEventListener('focus', e => this.refs.textarea.focus());
   }
 
   render () {
-    const {value, defaultValue, className, style, disabled, placeholder, fitLineLength, onChange, onFocus, onBlur, ...otherProps} = this.props;
+    const {value, defaultValue, className, style, fitLineLength, onViewportScroll, ...rest} = this.props;
     let classNames = ['text-input--text-area'];
     if (className) {
       classNames = classNames.concat(className);
     }
     if (this.state.focused) {
-      classNames.push('text-input--focused');
+      classNames.push('text-input--focus');
     }
     if (fitLineLength) {
       classNames.push('text-input--fit-line-length');
     }
+    let textValue = value;
+    if (value == null) {
+      textValue = this.state.value;
+    }
+    let listeners = {};
+    for (let key in rest) {
+      if (/^on[A-Z]/.test(key)) {
+        listeners[key] = rest[key];
+        delete rest[key];
+      }
+    }
     return (
-      <GenericInput style={style}
-                    disabled={disabled}
-                    placeholder={placeholder}
+      <GenericInput {...listeners}
+                    {...rest}
+                    style={style}
                     className={classNames}
-                    value={value || defaultValue}
-                    onFocus={onFocus}
-                    onBlur={onBlur}
-                    tabIndex="-1">
-        <GenericScrollBox axis={ScrollAxes.Y}
+                    value={textValue}>
+        <GenericScrollBox {...rest}
+                          axis={ScrollAxes.Y}
                           captureKeyboard={false}
+                          onViewportScroll={onViewportScroll}
                           className="text-input__area scroll-box--wrapped">
-          <textarea {...otherProps}
+          <textarea {...rest}
                     ref="textarea"
                     className="text-input__control scroll-box__viewport"
                     value={value}
                     defaultValue={defaultValue}
-                    disabled={disabled}
-                    onChange={onChange}
+                    onChange={this.onChange}
                     onFocus={this.onFocus}
                     onBlur={this.onBlur}/>
         </GenericScrollBox>

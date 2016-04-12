@@ -1,21 +1,33 @@
 import React from 'react';
+import {findDOMNode} from 'react-dom';
 
-const {string, bool, any} = React.PropTypes;
+const {any, bool} = React.PropTypes;
 
 export class GenericInput extends React.Component {
 
   static propTypes = {
-    value: string,
+    value: any,
     disabled: bool,
-    placeholder: any
+    placeholder: any,
+    className: any
   };
   static defaultProps = {
-    value: '',
     disabled: false
   };
 
+  getSubstringBoundingClientRect(start, end) {
+    let el = findDOMNode(this.refs.content),
+        value = el.textContent;
+    el.innerHTML = `${value.substring(0, start)}<span>${value.substring(start, end)}</span>${value.substring(end)}`;
+    return el.firstElementChild.getBoundingClientRect();
+  }
+
   render () {
-    const {value, disabled, placeholder, className, children, ...otherProps} = this.props;
+    const {value, disabled, placeholder, className, children, ...rest} = this.props;
+    let textValue = String(value);
+    if (value == null) {
+      textValue = '';
+    }
     let classNames = ['text-input'];
     if (className) {
       classNames = classNames.concat(className);
@@ -23,15 +35,18 @@ export class GenericInput extends React.Component {
     if (disabled) {
       classNames.push('text-input--disabled');
     }
-    if (value) {
+    if (textValue) {
       classNames.push('text-input--filled');
     }
     return (
-      <div {...otherProps}
+      <div {...rest}
            className={classNames.join(' ')}>
         <div className="text-input__placeholder">{placeholder}</div>
         {children}
-        <div className="text-input__content">{value}</div>
+        <div ref="content"
+             className="text-input__content">
+          {textValue}
+        </div>
       </div>
     );
   }

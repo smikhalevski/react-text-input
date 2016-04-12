@@ -13,6 +13,11 @@
     width: 100%;
     padding: inherit;
     cursor: text;
+
+    &:focus {
+      // Focus should be handled with .text-input--focus
+      outline: none 0;
+    }
   }
   &__area,
   &__placeholder {
