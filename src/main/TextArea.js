@@ -40,7 +40,7 @@ export class TextArea extends React.Component {
   }
 
   render () {
-    const {value, defaultValue, className, style, fitLineLength, onViewportScroll, ...rest} = this.props;
+    const {value, defaultValue, className, style, fitLineLength, placeholder, onViewportScroll, ...rest} = this.props;
     let classNames = ['text-input--text-area'];
     if (className) {
       classNames = classNames.concat(className);
@@ -67,7 +67,8 @@ export class TextArea extends React.Component {
                     {...rest}
                     style={style}
                     className={classNames}
-                    value={textValue}>
+                    value={textValue}
+                    placeholder={placeholder}>
         <GenericScrollBox {...rest}
                           axis={ScrollAxes.Y}
                           captureKeyboard={false}
