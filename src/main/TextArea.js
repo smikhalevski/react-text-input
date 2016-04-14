@@ -36,7 +36,7 @@ export class TextArea extends React.Component {
   };
 
   componentDidMount () {
-    findDOMNode(this).addEventListener('focus', e => this.refs.textarea.focus());
+    findDOMNode(this).addEventListener('focus', e => findDOMNode(this.refs.textarea).focus());
   }
 
   render () {

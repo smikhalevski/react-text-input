@@ -35,7 +35,7 @@ export class Input extends React.Component {
   };
 
   componentDidMount() {
-    findDOMNode(this).addEventListener('focus', e => this.refs.input.focus());
+    findDOMNode(this).addEventListener('focus', e => findDOMNode(this.refs.input).focus());
   }
 
   render() {
