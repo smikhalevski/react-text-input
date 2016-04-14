@@ -2,6 +2,7 @@
 
 .@{text-input-class} {
   position: relative;
+  overflow: hidden;
 
   &__control {
     background: transparent none;
@@ -36,13 +37,12 @@
   }
   &__content {
     visibility: hidden;
-    overflow: hidden;
     white-space: pre; // Specific for input[type="text"]
     padding-right: 2px; // Required to show cursor on empty component with fit line length enabled.
 
     &:after {
       display: inline;
-      content: '\feff';
+      content: '\feff'; // Zero-width non-breaking space.
     }
   }
   &--disabled > .@{text-input-class}__area {

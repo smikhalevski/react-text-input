@@ -19,10 +19,13 @@ export class Input extends React.Component {
     fitLineLength: false
   };
 
-  state = {
-    focused: false,
-    value: this.props.defaultValue
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      focused: false,
+      value: props.defaultValue
+    };
+  }
 
   onFocus = e => this.setState({focused: true});
 
