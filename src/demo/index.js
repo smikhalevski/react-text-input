@@ -17,7 +17,7 @@ class Demo extends Component {
   render() {
     return (
       <div className="container">
-        <h1><span className="light">React</span> Text Input <span className="light">0.0.3</span></h1>
+        <h1><span className="light">React</span> Text Input <span className="light">0.0.4</span></h1>
         <div className="row">
           <div className="col-md-4">
 

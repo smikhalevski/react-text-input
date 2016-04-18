@@ -1,4 +1,4 @@
-# React Text Input Components v0.0.3
+# React Text Input Components v0.0.4
 
 [API and Live Demo](http://smikhalevski.github.io/react-text-input/)
 
