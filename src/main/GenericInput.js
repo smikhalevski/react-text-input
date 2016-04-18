@@ -40,7 +40,8 @@ export class GenericInput extends React.Component {
     }
     return (
       <div {...rest}
-           className={classNames.join(' ')}>
+           className={classNames.join(' ')}
+           tabIndex="-1">
         <div className="text-input__placeholder">{placeholder}</div>
         {children}
         <div ref="content"
