@@ -51,6 +51,10 @@
   &--disabled > .@{text-input-class}__content {
     visibility: visible;
   }
+  &--password > .@{text-input-class}__content {
+    // Prevent showing password on disabled password input!
+    visibility: hidden !important;
+  }
   &--fit-line-length {
     display: inline-block;
     vertical-align: top;
