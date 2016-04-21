@@ -22,6 +22,14 @@ export class GenericInput extends React.Component {
     return el.firstElementChild.getBoundingClientRect();
   }
 
+  componentDidMount() {
+    findDOMNode(this).addEventListener('mousedown', e => {
+      if (!e.isDefaultPrevented()) {
+        findDOMNode(this).focus();
+      }
+    });
+  }
+
   render () {
     const {value, disabled, placeholder, className, children, ...rest} = this.props;
     let textValue = String(value);
