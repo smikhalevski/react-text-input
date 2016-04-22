@@ -7,7 +7,7 @@
 ## Motivation
 
 - Use arbitrary markup in `placeholder` even icons, animation etc.
-- Customize scrollbars for [`TextArea`][/src/main/TextArea.js]. Done with help of [`react-scroll-box`](http://github.com/smikhalevski/react-scroll-box).
+- Customize scrollbars for [`TextArea`](/src/main/TextArea.js). Done with help of [`react-scroll-box`](http://github.com/smikhalevski/react-scroll-box).
 - Enable vertical and horizontal autogrow that is fully controlled from CSS for [`Input`](/src/main/Input.js) and [`TextArea`](/src/main/TextArea.js).
 - Use components in either controlled or uncontrolled way.
 
