@@ -13,15 +13,15 @@
 
 Class Name | Description
 --- | ---
-<code>.text&#8209;input</code> | Root style class for both `Input` and `TextArea`
-<code>.text&#8209;input&#8209;&#8209;filled</code> | Added when component stores a non-empty value.
-<code>.text&#8209;input&#8209;&#8209;disabled</code> | Added when component is disabled.
+<code>.text-input</code> | Root style class for both `Input` and `TextArea`
+<code>.text-input--filled</code> | Added when component stores a non-empty value.
+<code>.text-input--disabled</code> | Added when component is disabled.
 <code>.text&#8209;input&#8209;&#8209;fit&#8209;line&#8209;length</code> | Added when component should grow horizontally.
-<code>.text&#8209;input&#8209;&#8209;text</code> | Modifier that matches type of `input` control. For example, `input[type="password"]` would have <code>.text&#8209;input&#8209;&#8209;password` specified.
-<code>.text&#8209;input&#8209;&#8209;text&#8209;area</code> | Added for `textarea` control.
-<code>.text&#8209;input__control</code> | HTML UI element `input` or `textarea`.
-<code>.text&#8209;input__placeholder</code> | Placeholder container. Content of the `placeholder` prop is rendered inside this container.
-<code>.text&#8209;input__content</code> | Container that stores input text. Required for autogrow.
+<code>.text-input--text</code> | Modifier that matches type of `input` control. For example, `input[type="password"]` would have <code>.text-input--password` specified.
+<code>.text-input--text-area</code> | Added for `textarea` control.
+<code>.text-input__control</code> | HTML UI element `input` or `textarea`.
+<code>.text-input__placeholder</code> | Placeholder container. Content of the `placeholder` prop is rendered inside this container.
+<code>.text-input__content</code> | Container that stores input text. Required for autogrow.
 
 ## License
 
