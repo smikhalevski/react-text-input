@@ -46,7 +46,7 @@
     "babel-plugin-transform-runtime": "6.6.0",
     "less": "2.6.1",
     "classnames": "",
-    "classlist-polyfill": ""
+    "classlist-polyfill": "1.0.2"
   },
   "dependencies": {
     "react": ">=0.13.0",
