@@ -32,6 +32,11 @@
   }
   &__placeholder {
     overflow: hidden;
+
+    &:not(*:root) {
+      // Fix for WebKit: input baseline does not match placeholder baseline
+      top: 1px;
+    }
   }
   &--filled > .@{text-input-class}__placeholder {
     display: none;
