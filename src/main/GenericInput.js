@@ -23,11 +23,7 @@ export class GenericInput extends React.Component {
   }
 
   componentDidMount() {
-    findDOMNode(this).addEventListener('mousedown', e => {
-      if (!e.isDefaultPrevented()) {
-        findDOMNode(this).focus();
-      }
-    });
+    findDOMNode(this).addEventListener('mousedown', e => findDOMNode(this).focus());
   }
 
   render () {

@@ -33,7 +33,7 @@ export class TextArea extends React.Component {
   onBlur = e => this.setState({focused: false});
 
   onChange = e => {
-    if ('defaultValue' in this.props) {
+    if (this.props.value == null) {
       this.setState({value: e.target.value});
     }
   };
