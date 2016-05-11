@@ -3,6 +3,7 @@
 .@{text-input-class} {
   position: relative;
   overflow: hidden;
+  cursor: text;
 
   &__control {
     background: transparent none;
@@ -13,7 +14,7 @@
     height: 100%;
     width: 100%;
     padding: inherit;
-    cursor: text;
+    cursor: inherit;
 
     &:focus {
       // Focus should be handled with .text-input--focus
