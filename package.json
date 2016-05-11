@@ -9,7 +9,7 @@
     "url": "https://github.com/smikhalevski/react-text-input.git"
   },
   "homepage": "https://github.com/smikhalevski/react-text-input",
-  "main": "target/out/index.js",
+  "main": "src/main/index.js",
   "files": [
     "src/main/",
     "target/out/",
