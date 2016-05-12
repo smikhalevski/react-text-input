@@ -7,14 +7,15 @@
   text-align: left;
 
   &__control {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding: inherit;
     background: transparent none;
     border: 0 none;
     border-radius: inherit;
     font: inherit;
     resize: none;
-    height: 100%;
-    width: 100%;
-    padding: inherit;
     cursor: inherit;
 
     &:focus {
@@ -24,6 +25,7 @@
   }
   &__area,
   &__placeholder {
+    box-sizing: border-box;
     position: absolute;
     top: 0;
     left: 0;
