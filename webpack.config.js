@@ -1,8 +1,12 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    index: './src/main/index.js'
+    index: [
+      './src/main/index.js',
+      './src/main/index.less'
+    ]
   },
   output: {
     path: './target/out',
@@ -15,6 +19,12 @@ module.exports = {
       'react-dom': true
     }
   ],
+  resolve: {
+    root: [
+      path.resolve(__dirname, '..'),
+      path.resolve(__dirname, 'node_modules')
+    ]
+  },
   plugins: [
     new ExtractTextPlugin('[name].css')
   ],
