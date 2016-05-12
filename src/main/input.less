@@ -46,11 +46,11 @@
   &--filled .@{text-input-class}__placeholder {
     display: none;
   }
-  &--disabled @{text-input-class} {
-    &__area {
+  &--disabled {
+    .@{text-input-class}__area {
       visibility: hidden;
     }
-    &__content {
+    &:not(.@{text-input-class}--password) .@{text-input-class}__content {
       visibility: visible;
     }
   }
