@@ -9,7 +9,8 @@
     "url": "https://github.com/smikhalevski/react-text-input.git"
   },
   "homepage": "https://github.com/smikhalevski/react-text-input",
-  "main": "src/main/index.js",
+  "main": "target/out/index.js",
+  "webpack": "src/main/index.js",
   "files": [
     "src/main/",
     "target/out/",
@@ -33,6 +34,7 @@
     "webpack": "1.12.9",
     "webpack-dev-server": "1.12.0",
     "babel-loader": "6.2.0",
+    "hson-loader": "~1.0.0",
     "less-loader": "2.2.2",
     "style-loader": "0.13.0",
     "css-loader": "0.23.1",
@@ -44,6 +46,7 @@
     "babel-preset-react": "6.5.0",
     "babel-preset-stage-0": "6.5.0",
     "babel-plugin-transform-runtime": "6.6.0",
+    "hanson": "~1.1.1",
     "less": "2.6.1",
     "classnames": "",
     "classlist-polyfill": "1.0.2"
