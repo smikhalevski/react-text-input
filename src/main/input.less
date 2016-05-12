@@ -39,14 +39,17 @@
   &__content {
     visibility: hidden;
     white-space: pre; // Specific for input[type="text"]
-
+  }
+  &:not(.@{text-input-class}--filled) {
     &:after {
       display: inline;
-      content: '\feff'; // Zero-width non-breaking space.
+      content: '\202f'; // Narrow non-breaking space is required to display cursor on input that fits line length.
     }
   }
-  &--filled .@{text-input-class}__placeholder {
-    display: none;
+  &--filled {
+    .@{text-input-class}__placeholder {
+      display: none;
+    }
   }
   &--disabled {
     .@{text-input-class}__area {
