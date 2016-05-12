@@ -42,7 +42,7 @@ export class Input extends React.Component {
   }
 
   render() {
-    const {value, defaultValue, className, style, fitLineLength, placeholder, type = 'text', ...rest} = this.props;
+    const {value, defaultValue, className, style, fitLineLength, placeholder, id, type = 'text', ...rest} = this.props;
     let classNames = ['text-input--' + type];
     if (className) {
       classNames = classNames.concat(className);
@@ -73,6 +73,7 @@ export class Input extends React.Component {
                     placeholder={placeholder}>
         <input {...rest}
                ref="input"
+               id={id}
                type={type}
                className="text-input__area text-input__control"
                value={value}
