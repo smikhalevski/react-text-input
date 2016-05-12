@@ -4,6 +4,7 @@
   position: relative;
   overflow: hidden;
   cursor: text;
+  text-align: left;
 
   &__control {
     background: transparent none;
@@ -32,34 +33,26 @@
   }
   &__placeholder {
     overflow: hidden;
-
-    &:not(*:root) {
-      // Fix for WebKit: input baseline does not match placeholder baseline
-      top: 1px;
-    }
-  }
-  &--filled > .@{text-input-class}__placeholder {
-    display: none;
   }
   &__content {
     visibility: hidden;
     white-space: pre; // Specific for input[type="text"]
-    padding-right: 2px; // Required to show cursor on empty component with fit line length enabled.
 
     &:after {
       display: inline;
       content: '\feff'; // Zero-width non-breaking space.
     }
   }
-  &--disabled > .@{text-input-class}__area {
-    visibility: hidden;
+  &--filled .@{text-input-class}__placeholder {
+    display: none;
   }
-  &--disabled > .@{text-input-class}__content {
-    visibility: visible;
-  }
-  &--password > .@{text-input-class}__content {
-    // Prevent showing password on disabled password input!
-    visibility: hidden !important;
+  &--disabled @{text-input-class} {
+    &__area {
+      visibility: hidden;
+    }
+    &__content {
+      visibility: visible;
+    }
   }
   &--fit-line-length {
     display: inline-block;
@@ -67,5 +60,9 @@
     max-width: 100%; // Prevent overflow of parent.
     clear: both;
     width: auto;
+  }
+
+  input:not(*:root) {
+    top: -1px; // Fix for WebKit: input baseline does not match placeholder baseline.
   }
 }

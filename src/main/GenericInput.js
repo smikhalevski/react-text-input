@@ -23,7 +23,7 @@ export class GenericInput extends React.Component {
   }
 
   componentDidMount() {
-    findDOMNode(this).addEventListener('mousedown', e => findDOMNode(this).focus());
+    findDOMNode(this.refs.placeholder).addEventListener('mousedown', e => findDOMNode(this).focus());
   }
 
   render () {
@@ -45,8 +45,9 @@ export class GenericInput extends React.Component {
     return (
       <div {...rest}
            className={classNames.join(' ')}
-           tabIndex="-1">
-        <div className="text-input__placeholder">{placeholder}</div>
+           tabIndex={disabled ? null : -1}>
+        <div ref="placeholder"
+             className="text-input__placeholder">{placeholder}</div>
         {children}
         <div ref="content"
              className="text-input__content">

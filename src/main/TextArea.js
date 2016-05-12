@@ -73,8 +73,8 @@ export class TextArea extends React.Component {
                     value={textValue}
                     placeholder={placeholder}>
         <GenericScrollBox {...rest}
-                          axis={ScrollAxes.Y}
                           captureKeyboard={false}
+                          outset={false}
                           onViewportScroll={onViewportScroll}
                           className="text-input__area scroll-box--wrapped">
           <textarea {...rest}
