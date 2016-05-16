@@ -1,6 +1,8 @@
 @text-input-class: text-input;
 
 .@{text-input-class} {
+  display: inline-block;
+  vertical-align: bottom;
   position: relative;
   overflow: hidden;
   cursor: text;
@@ -39,8 +41,7 @@
   &__content {
     visibility: hidden;
     white-space: pre; // Specific for input[type="text"]
-  }
-  &:not(.@{text-input-class}--filled) {
+
     &:after {
       display: inline;
       content: '\202f'; // Narrow non-breaking space is required to display cursor on input that fits line length.
@@ -60,8 +61,6 @@
     }
   }
   &--fit-line-length {
-    display: inline-block;
-    vertical-align: top;
     max-width: 100%; // Prevent overflow of parent.
     clear: both;
     width: auto;
