@@ -1,6 +1,6 @@
 {
   "name": "react-text-input",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Savva Mikhalevski",
   "description": "Textarea and input components with custom scrollbars and aurogrow in both axes",
   "license": "MIT",
