@@ -10,7 +10,6 @@
   },
   "homepage": "https://github.com/smikhalevski/react-text-input",
   "main": "target/out/index.js",
-  "webpack": "src/main/index.js",
   "files": [
     "src/main/",
     "target/out/",
