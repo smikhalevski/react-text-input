@@ -44,7 +44,7 @@ Prop Name | Type | Default | Description
 --- | --- | --- | ---
 `value` | String | | Value represented by this `Input` if it is controlled. 
 `defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
-`fitLineLength` | Boolean | `false` | Should.
+`fitLineLength` | Boolean | `false` | Toggle behaviour when input fits length of string in `value` or `defaultValue`.
 
 Uncontrolled input component markup:
 
