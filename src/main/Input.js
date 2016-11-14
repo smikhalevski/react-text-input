@@ -76,7 +76,7 @@ export class Input extends React.Component {
                id={id}
                type={type}
                className="text-input__area text-input__control"
-               value={value}
+               value={value == null ? '' : value}
                defaultValue={defaultValue}
                onChange={this.onChange}
                onFocus={this.onFocus}
