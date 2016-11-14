@@ -13,11 +13,13 @@ export class TextArea extends React.Component {
     disabled: bool,
     className: string,
     placeholder: any,
-    fitLineLength: bool
+    fitLineLength: bool,
+    propagateWheelScroll: bool
   };
   static defaultProps = {
     disabled: false,
-    fitLineLength: false
+    fitLineLength: false,
+    propagateWheelScroll: true
   };
 
   constructor(props) {
@@ -43,7 +45,7 @@ export class TextArea extends React.Component {
   }
 
   render () {
-    const {value, defaultValue, className, style, fitLineLength, placeholder, onViewportScroll, ...rest} = this.props;
+    const {value, propagateWheelScroll, defaultValue, className, style, fitLineLength, placeholder, onViewportScroll, ...rest} = this.props;
     let classNames = ['text-input--text-area'];
     if (className) {
       classNames = classNames.concat(className);
@@ -74,6 +76,7 @@ export class TextArea extends React.Component {
                     placeholder={placeholder}>
         <GenericScrollBox {...rest}
                           captureKeyboard={false}
+                          propagateWheelScroll={propagateWheelScroll}
                           outset={false}
                           onViewportScroll={onViewportScroll}
                           className="text-input__area scroll-box--wrapped">
