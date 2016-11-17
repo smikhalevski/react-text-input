@@ -27,6 +27,8 @@ export class Input extends React.Component {
     };
   }
 
+  getInput = e => this.refs.input;
+
   onFocus = e => this.setState({focused: true});
 
   onBlur = e => this.setState({focused: false});
