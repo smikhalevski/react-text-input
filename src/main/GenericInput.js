@@ -27,7 +27,7 @@ export class GenericInput extends React.Component {
   }
 
   render () {
-    const {value, disabled, placeholder, className, children, ...rest} = this.props;
+    const {value, disabled, placeholder, className, placeholderClassName, children, ...rest} = this.props;
     let textValue = String(value),
         tabIndex = -1;
     if (value == null) {
@@ -44,11 +44,15 @@ export class GenericInput extends React.Component {
     if (textValue) {
       classNames.push('text-input--filled');
     }
+    let placeholderClassNames = ['text-input__placeholder'];
+    if (placeholderClassName) {
+      placeholderClassNames.push(placeholderClassName);
+    }
     return (
       <div {...rest}
            className={classNames.join(' ')}
            tabIndex={tabIndex}>
-        <div ref="placeholder" className="text-input__placeholder">{placeholder}</div>
+        <div ref="placeholder" className={placeholderClassNames.join(' ')}>{placeholder}</div>
         {children}
         <div ref="content" className="text-input__content">{textValue}</div>
       </div>
